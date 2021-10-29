@@ -5,4 +5,4 @@ venv/
 .venv/
 .vscode/
 *db.sqlite3
-*migrations/*
+app/migrations/*
