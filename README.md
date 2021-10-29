@@ -65,7 +65,7 @@ http://localhost:8000/admin/
 
 **<u>also specific job output within the model </u>**
 
-<a href="https://i.ibb.co/b3kScYM/Screen-Shot-2021-10-29-at-15-35-51.png"><img width='60%'src="https://i.ibb.co/b3kScYM/Screen-Shot-2021-10-29-at-15-35-51.png"/></a>
+<a href="https://i.ibb.co/b3kScYM/Screen-Shot-2021-10-29-at-15-35-51.png"><img width="60%" src="https://i.ibb.co/b3kScYM/Screen-Shot-2021-10-29-at-15-35-51.png"/></a>
 
 **<u>As of now, pastebin results can also be viewed</u>**
 
