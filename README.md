@@ -47,7 +47,7 @@ python3 -m venv venv
 crontab -e
 ```
 
-now add this cron to croantab, replace this placeholder with the actual path path to project folder {**path to project folder**}
+add this cron, and replace this placeholder with the actual <u>absolute</u> path to project folder {**path to project folder**}
 
 ```shell
 * * * * * /{path to project folder}/venv/bin/python3 /{path to project folder}/manage.py runcrons
