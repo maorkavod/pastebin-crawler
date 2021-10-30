@@ -49,3 +49,12 @@ class PasteEntity:
     def date(self, value):
         if value:
             self._date = dateutil.parser.parse(value[0].get('title')).astimezone(timezone.utc)
+            
+    def asJson(self):
+        return {
+            'title' : self.title,
+            'author' : self.author,
+            'content' : self.content,
+            'date' : self.date,
+            'external_id' : self.external_id
+        }

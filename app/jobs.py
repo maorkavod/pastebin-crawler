@@ -24,21 +24,17 @@ class MyCronJob(CronJobBase):
             tree = html.fromstring(r.content)
             pastes_list = tree.xpath("//ul[@class='sidebar__menu']//li//a")
             for href in pastes_list:
-                r = requests.get(base_url + href.get('href').strip("/") )
+                external_id = href.get('href').strip("/")
+                r = requests.get(base_url + external_id)
                 if r.status_code == 200:
                     paste_tree = html.fromstring(r.content)
                     paste_craweld = PasteEntity(
-                        external_id= href.get('href').strip("/"),
+                        external_id= external_id,
                         title=paste_tree.xpath("//h1//text()"),
                         author=paste_tree.xpath("//div[@class='username']//a//text()"),
                         content=paste_tree.xpath("//div[@class='source']//text()"),
                         date=paste_tree.xpath("//div[@class='date']//span")
                     )
-                    obj, created  = Paste.objects.get_or_create(
-                        title = paste_craweld.title,
-                        author = paste_craweld.author,
-                        content = paste_craweld.content,
-                        date = paste_craweld.date,
-                        external_id = paste_craweld.external_id
-                    )
+                    obj, created  = Paste.objects.get_or_create(**paste_craweld.asJson())
+                    
         return '%s crawled pastes' % (len(pastes_list))
