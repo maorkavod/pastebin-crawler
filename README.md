@@ -30,7 +30,7 @@ Create a super user to access the admin panel and view the crawled data :
 docker exec -it pastebin-crawler-web python3 manage.py createsuperuser
 ```
 
-Than you can skip to [Admin panel](##### Admin panel)
+Than you can skip to [Admin panel](#####admin-panel)
 
 
 
