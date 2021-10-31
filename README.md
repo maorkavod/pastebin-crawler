@@ -6,14 +6,42 @@ the schedule job is managed by [django-cron]([Introduction &mdash; django-cron
 
 
 
-##### install
+##### Run with Docker image
+
+```bash
+docker pull maorkavod/pastebin-crawler:first
+```
+
+The image contain 3 services : 
+
+1. mysql server
+
+2. django admin
+
+3. django cronjob - There is a cronjob for every two minutes inside the docker to crawl pastebin
+
+
+
+Now, run the image. Once all the services have been started,
+
+Create a super user to access the admin panel and view the crawled data :
+
+```bash
+docker exec -it pastebin-crawler-web python3 manage.py createsuperuser
+```
+
+Than you can skip to [Admin panel](##### Admin panel)
+
+
+
+##### <u>OR Install Locally</u>
 
 ```bash
 git pull git@github.com:maorkavod/pastebin-crawler.git -b master
 cd pastebin-crawler
 ```
 
-##### use
+##### Use
 
 1. we first need to create virtual env 
 
@@ -55,9 +83,9 @@ add this cron, and replace this placeholder with the actual <u>absolute</u> path
 
 
 
+##### Admin panel
 
-
-**<u>now after we set everything up, we will see this output inside our Django admin panel our schedule job runing results: </u>**
+now after we set everything up, we will see this output inside our Django admin panel our schedule job runing results:
 
 http://localhost:8000/admin/
 
