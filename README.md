@@ -41,7 +41,7 @@ git pull git@github.com:maorkavod/pastebin-crawler.git -b master
 cd pastebin-crawler
 ```
 
-### Usge
+### Use
 
 1. we first need to create virtual env 
 
