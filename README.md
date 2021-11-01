@@ -6,10 +6,10 @@ the schedule job is managed by [django-cron]([Introduction &mdash; django-cron
 
 
 
-##### Run with Docker image
+### Run with Docker image
 
 ```bash
-docker pull maorkavod/pastebin-crawler:first
+ docker pull maorkavod/pastebin-crawler:0.1
 ```
 
 The image contain 3 services : 
@@ -20,9 +20,9 @@ The image contain 3 services :
 
 3. django cronjob - There is a cronjob for every two minutes inside the docker to crawl pastebin
 
+pastebin-crawler docker composer can be download from [here]([GitHub - maorkavod/pastebin-crawler-docker](https://github.com/maorkavod/pastebin-crawler-docker)) 
 
-
-Now, run the image. Once all the services have been started,
+Now, docker-compose the image. Once all the services have been started,
 
 Create a super user to access the admin panel and view the crawled data :
 
@@ -30,18 +30,18 @@ Create a super user to access the admin panel and view the crawled data :
 docker exec -it pastebin-crawler-web python3 manage.py createsuperuser
 ```
 
-Than you can skip to [Admin panel](#admin-panel)
+Than you can skip to [Admin panel](##### Admin panel)
 
 
 
-##### <u>OR Install Locally</u>
+### OR Install Locally
 
 ```bash
 git pull git@github.com:maorkavod/pastebin-crawler.git -b master
 cd pastebin-crawler
 ```
 
-##### Use
+### Usge
 
 1. we first need to create virtual env 
 
@@ -83,7 +83,7 @@ add this cron, and replace this placeholder with the actual <u>absolute</u> path
 
 
 
-##### Admin panel
+### Admin panel
 
 now after we set everything up, we will see this output inside our Django admin panel our schedule job runing results:
 
@@ -101,7 +101,7 @@ http://localhost:8000/admin/
     
 <img width='80%' src="https://i.ibb.co/7b174bC/Screen-Shot-2021-10-29-at-15-40-30.png"/></a>
 
-###### note
+### notes
 
 The crawling function are located at : 
 
